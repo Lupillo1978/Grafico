@@ -46,7 +46,7 @@ async function cargar() {
                     type: "bar",
                     label: "Alimentación",
                     data: data.alimentacion,
-                    backgroundColor: "#1e88e5",
+                    backgroundColor: "#5a1ee5",
                     barThickness: 3,
                     yAxisID: "y2"
                 },
