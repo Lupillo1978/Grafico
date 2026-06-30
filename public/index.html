@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema Alimentación Camarón</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: 500px;
+        }
+
+        .header {
+            display:flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <button onclick="cargar()">← Día anterior</button>
+    <h3>Sistema AQ1 - Alimentación Camarón</h3>
+    <button onclick="cargar()">Día siguiente →</button>
+</div>
+
+<canvas id="chart"></canvas>
+
+<script src="./grafica.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+/* =========================
+   RESETEO GENERAL
+========================= */
+
+*{
+  margin:0; /* Elimina márgenes por defecto */
+  padding:0; /* Elimina espacios internos */
+  box-sizing:border-box; 
+  /* Hace que el padding no aumente el tamaño total */
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Fuente principal del sitio */
+}
+
+/* =========================
+   ESTILO DEL BODY
+========================= */
+
+body{
+  height:100vh; /* Altura completa de la ventana */
+
+  display:flex; /* Activa Flexbox */
+
+  justify-content:center;
+  /* Centra horizontalmente */
+
+  align-items:center;
+  /* Centra verticalmente */
+
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #334155
+  );
+  /* Fondo degradado */
+
+  overflow:hidden;
+  /* Oculta elementos que salgan de pantalla */
+}
+
+/* =========================
+   FONDO ANIMADO
+========================= */
+
+.background-shapes{
+  position:absolute;
+  /* Permite mover libremente */
+
+  width:100%;
+  height:100%;
+
+  overflow:hidden;
+  /* Oculta exceso */
+
+  z-index:0;
+  /* Envía al fondo */
+}
+
+/* Estilo de cada círculo */
+.background-shapes span{
+
+  position:absolute;
+
+  display:block;
+
+  width:200px;
+  height:200px;
+
+  background:rgba(255,255,255,0.2);
+  /* Blanco transparente */
+
+  border-radius:50%;
+  /* Lo convierte en círculo */
+
+  animation: float 12s linear infinite;
+  /* Animación infinita */
+
+  bottom:-150px;
+  /* Empieza debajo de pantalla */
+}
+
+/* Primer círculo */
+.background-shapes span:nth-child(1){
+
+  left:10%;
+  /* Posición horizontal */
+
+  width:120px;
+  height:120px;
+
+  animation-duration:10s;
+}
+
+/* Segundo círculo */
+.background-shapes span:nth-child(2){
+
+  left:40%;
+
+  width:180px;
+  height:180px;
+
+  animation-duration:14s;
+}
+
+/* Tercer círculo */
+.background-shapes span:nth-child(3){
+
+  left:70%;
+
+  width:250px;
+  height:250px;
+
+  animation-duration:18s;
+}
+
+/* =========================
+   ANIMACIÓN DE LOS CÍRCULOS
+========================= */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0) rotate(0deg);
+    /* Empieza abajo */
+
+    opacity:0;
+    /* Invisible */
+  }
+
+  50%{
+    opacity:1;
+    /* Visible */
+  }
+
+  100%{
+    transform:translateY(-1000px) rotate(360deg);
+    /* Sube y gira */
+
+    opacity:0;
+    /* Desaparece */
+  }
+}
+
+/* =========================
+   CONTENEDOR LOGIN
+========================= */
+
+.login-container{
+
+  position:relative;
+
+  z-index:1;
+  /* Se coloca encima del fondo */
+
+  width:380px;
+
+  padding:40px;
+  /* Espacio interno */
+
+  border-radius:20px;
+  /* Bordes redondeados */
+
+  background:rgba(255,255,255,0.1);
+  /* Fondo transparente */
+
+  backdrop-filter: blur(12px);
+  /* Efecto vidrio */
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  box-shadow:0 8px 32px rgba(0,0,0,0.3);
+  /* Sombra */
+
+  color:white;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.login-container h1{
+
+  color:aqua;
+
+  text-align:center;
+  /* Centra texto */
+
+  margin-bottom:10px;
+
+  font-size:2rem;
+}
+
+.login-container h3{
+
+  color:chartreuse;
+
+  text-align:center;
+
+  margin-bottom:10px;
+
+  font-size:1.3rem;
+}
+
+/* Texto descriptivo */
+.login-container p{
+
+  text-align:center;
+
+  margin-bottom:10px;
+
+  color:#cbd5e1;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group{
+  margin-bottom:20px;
+}
+
+/* Texto label */
+.input-group label{
+
+  display:block;
+  /* Hace que ocupe toda la línea */
+
+  margin-bottom:8px;
+
+  font-size:0.95rem;
+}
+
+/* Campos input */
+.input-group input{
+
+  width:100%;
+  /* Ocupa todo el ancho */
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:12px;
+
+  outline:none;
+  /* Quita borde azul */
+
+  background:rgba(255,255,255,0.12);
+
+  color:white;
+
+  font-size:1rem;
+
+  transition:0.3s;
+  /* Suaviza cambios */
+}
+
+/* Placeholder */
+.input-group input::placeholder{
+  color:#cbd5e1;
+}
+
+/* Cuando el usuario selecciona el input */
+.input-group input:focus{
+
+  background:rgba(255,255,255,0.2);
+
+  border:1px solid #38bdf8;
+}
+
+/* =========================
+   OPCIONES
+========================= */
+
+.options{
+
+  display:flex;
+
+  justify-content:space-between;
+  /* Separa elementos */
+
+  align-items:center;
+
+  margin-bottom:25px;
+
+  font-size:0.9rem;
+}
+
+/* Link */
+.options a{
+
+  color:#38bdf8;
+
+  text-decoration:none;
+}
+
+/* Hover link */
+.options a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+   BOTÓN LOGIN
+========================= */
+
+.login-btn{
+
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#7238f8;
+
+  color:white;
+
+  font-size:1rem;
+
+  font-weight:bold;
+
+  cursor:pointer;
+  /* Cambia el cursor */
+
+  transition:0.3s;
+}
+
+/* Efecto hover */
+.login-btn:hover{
+
+  background:#0ea5e9;
+
+  transform:translateY(-2px);
+  /* Sube ligeramente */
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+  text-align:center;
+
+  margin-top:20px;
+
+  font-size:0.9rem;
+
+  color:#cbd5e1;
+}
+
+/* Link footer */
+.footer a{
+
+  color:#38bdf8;
+
+  text-decoration:none;
+}
+
+/* Hover footer */
+.footer a:hover{
+  text-decoration:underline;
+}
